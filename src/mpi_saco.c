@@ -1,7 +1,33 @@
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include <stdint.h>
+
+
+
+float Q_rsqrt(float number) {
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+
+    x2 = number * 0.5F;
+    y  = number;
+    
+    // Evil floating point bit level hacking
+    i  = *(long *)&y;                     // treat float's bits as integer
+    i  = 0x5f3759df - (i >> 1);           // initial guess
+    y  = *(float *)&i;
+
+    // One iteration of Newton-Raphson
+    y  = y * (threehalfs - (x2 * y * y)); // improve estimate
+
+    return y;
+}
+
+float sqrt(float number) {
+    return 1.0f / Q_rsqrt(number);
+}
+
 
 #define TAMANHO_TAREFA 500000
 #define TAG_TAREFA 1
