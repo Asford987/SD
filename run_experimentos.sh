@@ -4,21 +4,21 @@ set -e
 mkdir -p bin logs scripts
 
 # ========= COMPILAÇÃO =========
-echo "[🔧] Compilando programas..."
+echo "[Compilando programas...]"
 
 gcc -O2 -o bin/seq_primos src/seq_primos.c /usr/lib64/libm.a
 mpicc -O2 -o bin/mpi_saltos src/mpi_saltos.c /usr/lib64/libm.a
 mpicc -O2 -o bin/mpi_saco src/mpi_saco.c /usr/lib64/libm.a
 
-echo "[✅] Compilação concluída."
+echo "[Compilação concluída.]"
 
 # ========= EXECUÇÃO SEQUENCIAL =========
 Ns=(100000000 1000000000)
 
-echo "[▶️] Executando versão sequencial..."
+echo "[Executando versão sequencial...]"
 for N in "${Ns[@]}"; do
     ./bin/seq_primos $N > logs/seq_N${N}.log 2>&1
-    echo "  [✔] seq N=$N"
+    echo "  [OK] seq N=$N"
 done
 
 # ========= TEMPLATE DE SUBMISSÃO QSUB =========
@@ -26,7 +26,7 @@ gerar_script_qsub() {
     versao=$1
     np=$2
     N=$3
-    script="scripts/job_${versao}_N${N}_np${np}.sh"
+    script="scripts/${versao}_N${N}_np${np}.qsub"
 
     cat << EOF > $script
 #!/bin/bash
@@ -51,9 +51,9 @@ for versao in "${versoes[@]}"; do
     for N in "${Ns[@]}"; do
         for np in {2..16}; do
             gerar_script_qsub $versao $np $N
-            echo "  [📤] Submetido: $versao | N=$N | np=$np"
+            echo "  [Enviado] $versao | N=$N | np=$np"
         done
     done
 done
 
-echo "[🏁] Todas as tarefas foram submetidas com sucesso."
+echo "[Todas as tarefas foram submetidas.]"
