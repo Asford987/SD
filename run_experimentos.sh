@@ -17,8 +17,9 @@ Ns=(100000000 1000000000)
 
 echo "[Executando versão sequencial...]"
 for N in "${Ns[@]}"; do
-    ./bin/seq_primos $N > logs/seq_N${N}.log 2>&1
-    echo "  [OK] seq N=$N"
+    output_file="logs/seq_primos_N${N}.txt"
+    ./bin/seq_primos $N > "$output_file" 2> "logs/seq_primos_N${N}.err"
+    echo "  [OK] seq N=$N -> $output_file"
 done
 
 # ========= TEMPLATE DE SUBMISSÃO QSUB =========
@@ -27,17 +28,19 @@ gerar_script_qsub() {
     np=$2
     N=$3
     script="scripts/${versao}_N${N}_np${np}.qsub"
+    output_file="logs/${versao}_N${N}_np${np}.txt"
+    error_file="logs/${versao}_N${N}_np${np}.err"
 
     cat << EOF > $script
 #!/bin/bash
 #PBS -l nodes=1:ppn=${np}
 #PBS -N ${versao}_N${N}_np${np}
-#PBS -o logs/${versao}_N${N}_np${np}.log
-#PBS -e logs/${versao}_N${N}_np${np}.err
+#PBS -o ${output_file}
+#PBS -e ${error_file}
 #PBS -q batch
 
 cd \$PBS_O_WORKDIR
-mpirun -np ${np} ./bin/${versao} ${N}
+mpirun -np ${np} ./bin/${versao} ${N} > ${output_file} 2>> ${error_file}
 EOF
 
     chmod +x $script
