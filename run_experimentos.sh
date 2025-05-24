@@ -6,9 +6,9 @@ mkdir -p bin logs scripts
 # ========= COMPILAÇÃO =========
 echo "[Compilando programas...]"
 
-gcc -std=c99 -O2 -o bin/seq_primos src/seq_primos.c /usr/lib64/libm.a
-mpicc -std=c99 -O2 -o bin/mpi_saltos src/mpi_saltos.c /usr/lib64/libm.a
-mpicc -std=c99 -O2 -o bin/mpi_saco src/mpi_saco.c /usr/lib64/libm.a
+gcc -std=c99 -O2 -o bin/seq_primos src/seq_primos.c
+mpicc -std=c99 -O2 -o bin/mpi_saltos src/mpi_saltos.c
+mpicc -std=c99 -O2 -o bin/mpi_saco src/mpi_saco.c
 
 echo "[Compilação concluída.]"
 
@@ -33,14 +33,16 @@ gerar_script_qsub() {
 
     cat << EOF > $script
 #!/bin/bash
-#PBS -l nodes=1:ppn=${np}
-#PBS -N ${versao}_N${N}_np${np}
-#PBS -o ${output_file}
-#PBS -e ${error_file}
-#PBS -q batch
+#$ -cwd
+#$ -j y
+#$ -S /bin/bash
+#$ -N ${versao}_N${N}_np${np}
+#$ -pe mpi ${np}
+#$ -o ${output_file}
+#$ -e ${error_file}
 
-cd \$PBS_O_WORKDIR
-mpirun -np ${np} ./bin/${versao} ${N} > ${output_file} 2>> ${error_file}
+cd \$PWD
+/opt/openmpi/bin/mpirun -np ${np} ./bin/${versao} ${N}
 EOF
 
     chmod +x $script
