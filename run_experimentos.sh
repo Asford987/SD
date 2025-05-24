@@ -6,9 +6,9 @@ mkdir -p bin logs scripts
 # ========= COMPILAÇÃO =========
 echo "[Compilando programas...]"
 
-gcc -O2 -o bin/seq_primos src/seq_primos.c /usr/lib64/libm.a
-mpicc -O2 -o bin/mpi_saltos src/mpi_saltos.c /usr/lib64/libm.a
-mpicc -O2 -o bin/mpi_saco src/mpi_saco.c /usr/lib64/libm.a
+gcc -std=c99 -O2 -o bin/seq_primos src/seq_primos.c /usr/lib64/libm.a
+mpicc -std=c99 -O2 -o bin/mpi_saltos src/mpi_saltos.c /usr/lib64/libm.a
+mpicc -std=c99 -O2 -o bin/mpi_saco src/mpi_saco.c /usr/lib64/libm.a
 
 echo "[Compilação concluída.]"
 
