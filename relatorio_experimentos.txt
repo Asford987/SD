@@ -1,0 +1,190 @@
+mpi_saco:
+    100M:
+        processadores:
+            2:
+                quantidade: 5761455
+                tempo: 283.75 segundos
+            3:
+                quantidade: 5761455
+                tempo: 139.77 segundos
+            4:
+                quantidade: 5761455
+                tempo: 92.14 segundos
+            5:
+                quantidade: 5761455
+                tempo: 71.10 segundos
+            6:
+                quantidade: 5761455
+                tempo: 55.30 segundos
+            7:
+                quantidade: 5761455
+                tempo: 44.00 segundos
+            8:
+                quantidade: 5761455
+                tempo: 43.23 segundos
+            9:
+                quantidade: 5761455
+                tempo: 36.38 segundos
+            10:
+                quantidade: 5761455
+                tempo: 31.41 segundos
+            11:
+                quantidade: 5761455
+                tempo: 26.51 segundos
+            12:
+                quantidade: 5761455
+                tempo: 22.45 segundos
+            13:
+                quantidade: 5761455
+                tempo: 20.70 segundos
+            14:
+                quantidade: 5761455
+                tempo: 23.88 segundos
+            15:
+                quantidade: 5761455
+                tempo: 22.81 segundos
+            16:
+                quantidade: 5761455
+                tempo: 21.06 segundos
+    1B:
+        processadores:
+            2:
+                quantidade: 50847534
+                tempo: 6638.41 segundos
+            3:
+                quantidade: 50847534
+                tempo: 2877.56 segundos
+            4:
+                quantidade: 50847534
+                tempo: 1950.72 segundos
+            5:
+                quantidade: 50847534
+                tempo: 1492.42 segundos
+            6:
+                quantidade: 50847534
+                tempo: 1348.64 segundos
+            7:
+                quantidade: 50847534
+                tempo: 1215.12 segundos
+            8:
+                quantidade: 50847534
+                tempo: 1112.91 segundos
+            9:
+                quantidade: 50847534
+                tempo: 922.25 segundos
+            10:
+                quantidade: 50847534
+                tempo: 835.80 segundos
+            11:
+                quantidade: 50847534
+                tempo: 727.16 segundos
+            12:
+                quantidade: 50847534
+                tempo: 608.22 segundos
+            13:
+                quantidade: 50847534
+                tempo: 536.48 segundos
+            14:
+                quantidade: 50847534
+                tempo: 624.10 segundos
+            15:
+                quantidade: 50847534
+                tempo: 573.66 segundos
+            16:
+                quantidade: 50847534
+                tempo: 536.36 segundos
+mpi_saltos:
+    100M:
+        processadores:
+            2:
+                quantidade: 5761455
+                tempo: 151.35 segundos
+            3:
+                quantidade: 5761455
+                tempo: 116.43 segundos
+            4:
+                quantidade: 5761455
+                tempo: 72.88 segundos
+            5:
+                quantidade: 5761455
+                tempo: 69.40 segundos
+            6:
+                quantidade: 5761455
+                tempo: 71.98 segundos
+            7:
+                quantidade: 5761455
+                tempo: 48.20 segundos
+            8:
+                quantidade: 5761455
+                tempo: 34.04 segundos
+            9:
+                quantidade: 5761455
+                tempo: 47.22 segundos
+            10:
+                quantidade: 5761455
+                tempo: 35.88 segundos
+            11:
+                quantidade: 5761455
+                tempo: 25.89 segundos
+            12:
+                quantidade: 5761455
+                tempo: 36.56 segundos
+            13:
+                quantidade: 5761455
+                tempo: 25.26 segundos
+            14:
+                quantidade: 5761455
+                tempo: 24.89 segundos
+            15:
+                quantidade: 5761455
+                tempo: 36.42 segundos
+            16:
+                quantidade: 5761455
+                tempo: 19.22 segundos
+    1B:
+        processadores:
+            2:
+                quantidade: 50847534
+                tempo: 3697.85 segundos
+            3:
+                quantidade: 50847534
+                tempo: 3279.42 segundos
+            4:
+                quantidade: 50847534
+                tempo: 1757.91 segundos
+            5:
+                quantidade: 50847534
+                tempo: 1565.28 segundos
+            6:
+                quantidade: 50847534
+                tempo: 1952.36 segundos
+            7:
+                quantidade: 50847534
+                tempo: 1312.49 segundos
+            8:
+                quantidade: 50847534
+                tempo: 1009.85 segundos
+            9:
+                quantidade: 50847534
+                tempo: 1280.44 segundos
+            10:
+                quantidade: 50847534
+                tempo: 982.32 segundos
+            11:
+                quantidade: 50847534
+                tempo: 698.51 segundos
+            12:
+                quantidade: 50847534
+                tempo: 972.91 segundos
+            13:
+                quantidade: 50847534
+                tempo: 662.50 segundos
+            14:
+                quantidade: 50847534
+                tempo: 659.24 segundos
+            15:
+                quantidade: 50847534
+                tempo: 960.63 segundos
+            16:
+                quantidade: 50847534
+                tempo: 503.71 segundos
